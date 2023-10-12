@@ -144,7 +144,6 @@ class Player extends MovableObject {
     }
 
     animateWalkingleft() {
-        this.loadImages(this.IMAGES_WALKING);
         this.playanimation(this.IMAGES_WALKING);
     }
 }
