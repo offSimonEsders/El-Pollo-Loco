@@ -93,15 +93,39 @@ function gamebgremove() {
  */
 mutebtn.addEventListener('click', () => {
     if (!volume) {
-        bg_music.volume = 0.2;
+        unmute();
         volume = true;
         changeMutebtn();
     } else {
-        bg_music.volume = 0.0;
+        mute();
         volume = false;
         changeMutebtn();
     }
 });
+
+function mute() {
+    bg_music.volume = 0;
+    world.bottlesound.volume = 0;
+    world.coinsound.volume = 0;
+    world.winsound.volume = 0;
+    world.losesound.volume = 0;
+    world.character.deadSound.volume = 0;
+    for (let en of world.enemies) {
+        en.deadSound.volume = 0;
+    }
+}
+
+function unmute() {
+    bg_music.volume = 0.1;
+    world.bottlesound.volume = 0.2;
+    world.coinsound.volume = 0.2;
+    world.winsound.volume = 0.2;
+    world.losesound.volume = 0.2;
+    world.character.deadSound.volume = 0.2;
+    for (let en of world.enemies) {
+        en.deadSound.volume = 0.2;
+    }
+}
 
 /**
  * Enter or exit the fullscreen of the canvas
