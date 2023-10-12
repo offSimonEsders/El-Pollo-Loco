@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('./img/5_background/first_half_background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Mooli', sans-serif;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+.gamecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+#canvas {
+    border: 5px solid black;
+    border: none;
+    background-color: black;
+    background-image: url('./img/9_intro_outro_screens/start/startscreen_1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.gamebg {
+    background-image: url('./img/5_background/layers/air.png') !important;
+}
+
+.lostbg {
+    background-image: url('./img/9_intro_outro_screens/game_over/oh no you lost!.png') !important;
+}
+
+.wonbg {
+    background-image: url('./img/9_intro_outro_screens/game_over/game over!.png') !important;
+}
+
+.game {
+    position: absolute;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.extracontainer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    gap: 10px;
+}
+
+.fullscreengame {
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+.gamebtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 90px;
+    background-color: green;
+}
+
+.gamebtn:hover {
+    scale: 1.05;
+}
+
+.gamebtn:active {
+    scale: 1;
+}
+
+.gamebtn span {
+    font-size: 3rem;
+}
+
+.phonebuttons {
+    display: none;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    bottom: 25px;
+}
+
+.phonebuttons * {
+    display: flex;
+    flex-direction: row;
+    margin: 0 25px;
+}
+
+.rightbtn{
+    gap: 20px;
+}
+
+.rightbtn * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    height: 50px;
+    width: 50px;
+}
+
+.rightbtn button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0;
+}
+
+.leftbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+}
+
+.leftbtn span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pact {
+    background-color: green;
+    border: none;
+    border-radius: 90px;
+    outline: none;
+}
+
+.pact:active {
+    scale: 0.98;
+}
+
+.landscape {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    background-color: aqua;
+    font-size: 3rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.controls div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.controls div span {
+    font-size: 3rem;
+}
+
+.d-none {
+    display: none !important;
+}
+
+@media (width <= 1300px) {
+    #canvas {
+        width: 100vw;
+        height: 100%;
+    }
+    .phonebuttons {
+        display: flex;
+    }
+    .controls {
+        display: none;
+    }
+    #fullscreen {
+        display: none;
+    }
+    #controlsbtn {
+        display: none;
+    }
+}
+
+@media (width < 850px) {
+    body {
+        overflow: auto;
+    }
+}
+
+@media (width < 665px) {
+    .landscape {
+        display: flex;
+    }
+}
